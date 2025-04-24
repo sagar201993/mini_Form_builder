@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  forms     Form[]
+}
+
+model Form {
+  id              Int         @id @default(autoincrement())
+  title           String
+  backgroundColor String
+  showLabels      Boolean
+  fontFamily      String
+  language        String
+  fields          FormField[]
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  userId Int?
+  user   User? @relation(fields: [userId], references: [id])
+}
+
+model FormField {
+  id              Int    @id @default(autoincrement())
+  formId          Int
+  form            Form   @relation(fields: [formId], references: [id])
+  type            String
+  name            String
+  label           Json
+  placeholder     Json?
+  backgroundColor String
+  value           Json?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

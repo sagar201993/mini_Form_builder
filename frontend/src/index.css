@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================== COMPONENTS ===================== */
+@layer components {
+  /* === Form Container === */
+
+  .form-container {
+    @apply p-4 sm:p-6 rounded-lg shadow-md min-h-[600px] sm:min-h-[700px] md:min-h-[800px] w-full;
+  }
+  .form-title {
+    @apply text-left text-base sm:text-lg font-semibold mb-4 underline;
+  }
+
+  /* === Field Layout === */
+  .field-wrapper {
+    @apply mb-4 p-2 rounded bg-transparent max-w-md;
+  }
+  .field-wrapper-container {
+    @apply mb-4;
+  }
+  .field-wrapper-label {
+    @apply block text-sm font-medium mb-1;
+  }
+
+  /* === Field Edit Mode === */
+  .input-edit {
+    @apply w-full border border-gray-300 rounded px-2 py-1;
+  }
+  .edit-buttons {
+    @apply flex gap-2;
+  }
+  .button-save {
+    @apply px-4 py-2 bg-blue-500 text-white rounded;
+  }
+  .button-cancel {
+    @apply px-4 py-2 bg-gray-300 text-gray-700 rounded;
+  }
+
+  /* === Field Controls === */
+  .field-actions {
+    @apply flex items-start justify-between;
+  }
+  .menu-button {
+    @apply relative p-2 border border-gray-300 bg-white rounded-md shadow-sm hover:bg-gray-100 top-6 left-7;
+  }
+  .menu {
+    @apply absolute left-full ml-10 top-0 w-32 bg-white border rounded shadow-md z-20;
+  }
+  .menu-item {
+    @apply w-full text-left px-4 py-2 text-sm hover:bg-gray-100;
+  }
+  .menu-delete {
+    @apply hover:bg-red-100 text-red-600;
+  }
+
+  /* === Add Field === */
+  .add-field-btn {
+    @apply border-2 border-dashed border-blue-400 text-blue-600 px-4 py-2 rounded hover:bg-blue-50 flex items-center justify-center gap-1 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 ml-2;
+  }
+
+  /* === Field Selector Dropdown === */
+  .selector-menu {
+    @apply absolute mt-2 w-full bg-white border rounded-lg shadow-lg z-10;
+  }
+  .selector-search {
+    @apply relative p-2 border-b;
+  }
+  .search-input {
+    @apply w-full pl-8 pr-2 py-1.5 border rounded focus:outline-none focus:ring;
+  }
+  .selector-option {
+    @apply p-2 px-4 hover:bg-gray-100 cursor-pointer text-sm;
+  }
+  .selector-no-match {
+    @apply p-2 px-4 text-gray-500 text-sm;
+  }
+
+  /* === Button Field === */
+  .button-basic {
+    @apply px-4 py-2 bg-gray-200 rounded hover:bg-gray-300;
+  }
+
+  /* === Checkbox Field === */
+  .checkbox-label {
+    @apply flex items-center;
+  }
+  .checkbox-input {
+    @apply mr-2;
+  }
+
+  /* === Dropdown Field === */
+  .dropdown-select {
+    @apply w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+
+  /* === Radio Button Field === */
+  .radio-group {
+    @apply flex flex-col sm:flex-row sm:space-x-4 space-y-2 sm:space-y-0;
+  }
+  .radio-label {
+    @apply flex items-center;
+  }
+  .radio-input {
+    @apply mr-2;
+  }
+
+  /* === Switch Field === */
+  .switch-label {
+    @apply flex items-center relative;
+  }
+  .switch-input {
+    @apply sr-only;
+  }
+  .switch-style {
+    @apply w-11 h-6 bg-gray-200 rounded-full after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all;
+  }
+
+  /* === Text Field === */
+  .textfield-wrapper {
+    @apply flex flex-col;
+  }
+  .textfield-label {
+    @apply mb-1 font-medium;
+  }
+  .textfield-input {
+    @apply border border-gray-300 rounded px-2 py-1;
+  }
+
+  /* === Settings Panel === */
+  .settings-panel {
+    @apply space-y-5 text-sm text-gray-700;
+  }
+  .settings-button {
+    @apply w-full px-4 py-2 rounded text-white;
+  }
+  .settings-button-loading {
+    @apply bg-gray-400 cursor-not-allowed;
+  }
+  .settings-button-idle {
+    @apply bg-black hover:bg-gray-800;
+  }
+  .settings-group-label {
+    @apply font-medium mb-1;
+  }
+  .settings-select {
+    @apply w-full border border-gray-300 rounded px-3 py-1.5 focus:outline-none;
+  }
+  .settings-color-options {
+    @apply flex items-center space-x-3;
+  }
+  .settings-color-button {
+    @apply w-5 h-5 rounded-full border-2;
+  }
+  .settings-font-option {
+    @apply w-full border border-gray-300 rounded px-3 py-1.5 focus:outline-none;
+  }
+  .settings-toggle-label {
+    @apply inline-flex items-center cursor-pointer;
+  }
+  .settings-toggle-input {
+    @apply sr-only;
+  }
+  .settings-toggle-track {
+    @apply w-10 h-5 bg-gray-300 rounded-full relative transition-colors duration-200;
+  }
+  .settings-toggle-thumb {
+    @apply absolute left-1 top-0.5 w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-200;
+  }
+  .settings-toggle-text {
+    @apply ml-3 font-medium text-green-600;
+  }
+
+  /* === Layout === */
+  .layout-form {
+    @apply flex flex-col lg:flex-row h-auto lg:h-screen font-sans;
+  }
+
+  /* === Sidebar === */
+  .sidebar {
+    @apply w-full lg:w-64 bg-[#111827] text-white p-6 space-y-6 lg:h-screen;
+  }
+  .sidebar-title {
+    @apply text-xl font-bold;
+  }
+  .sidebar-nav {
+    @apply space-y-3 text-sm;
+  }
+  .sidebar-link {
+    @apply hover:text-gray-300 cursor-pointer;
+  }
+  .sidebar-link-logout {
+    @apply hover:text-red-400 cursor-pointer;
+  }
+
+  /* === Main Content === */
+  .main-content {
+    @apply flex-1 p-4 sm:p-6 md:p-8 overflow-auto relative bg-[#F3F4F6];
+  }
+  .builder-wrapper {
+    @apply flex flex-col xl:flex-row gap-8;
+  }
+  .formbuilder-container {
+    @apply w-full max-w-3xl;
+  }
+  .settings-container {
+    @apply w-full xl:w-[400px] mt-6 xl:mt-0;
+  }
+  .settings-card {
+    @apply bg-white p-6 rounded-lg shadow-md xl:sticky xl:top-8;
+  }
+
+  /* === Page Headings === */
+  .page-header {
+    @apply text-sm text-blue-600 mb-1 font-medium;
+  }
+  .page-title {
+    @apply text-2xl font-semibold text-gray-900 mb-6;
+  }
+
+  /* === Content Cards === */
+  .content-card {
+    @apply bg-white p-6 rounded-lg shadow-md;
+  }
+
+  /* === Buttons === */
+  .black-button {
+    @apply w-full bg-black text-white py-2 px-4 rounded hover:bg-gray-800;
+  }
+
+  /* === Auth Pages === */
+  .auth-page {
+    @apply flex items-center justify-center min-h-screen bg-gray-100 px-4;
+  }
+  .auth-card {
+    @apply w-full max-w-md p-8 space-y-6 bg-white rounded-2xl shadow-lg;
+  }
+  .auth-title {
+    @apply text-2xl font-bold text-center text-gray-800;
+  }
+  .auth-form {
+    @apply space-y-5;
+  }
+  .auth-label {
+    @apply block mb-1 text-sm font-medium text-gray-600;
+  }
+  .auth-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+  .auth-button {
+    @apply w-full px-4 py-3 text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-colors;
+  }
+  .auth-footer {
+    @apply text-sm text-center text-gray-500;
+  }
+  .auth-link {
+    @apply text-blue-600 hover:underline;
+  }
+}
